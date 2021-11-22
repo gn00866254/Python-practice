@@ -38,13 +38,7 @@ SIREN 2,9800
 ```
 
 code：
-```python=
-file=open("game.txt")
-num=int(input("何行目まで出力しますか："))
-for i in range(num):
-    print(file.readline())
-file.close()
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_2/Q1.one_line.py
 
 ## 問2：一行一行
 ファイル「score.txt」の内容を読み込み、総和を求める。
@@ -68,12 +62,7 @@ end
 総和：674
 ```
 code：
-```python=
-file=open("score.txt")
-score=[i for i in file]
-newscore=[int(i) for i in score[:-1]]
-print("総和：{}".format(sum(newscore)))
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_2/Q2.one_line_sum.py
 
 ## 問3：読み込み出力
 ファイル「game.txt」の内容を読み込み、出力例のように出力すること。
@@ -93,19 +82,7 @@ Corpse Party,1520
 ![](https://i.imgur.com/FwmcFzw.png)
 
 code：
-```python=
-#アクセス
-file=open("game.txt")
-#幅は40+10、棒三つなので53個「-」
-print("-"*53)
-#一行ずつ
-for lines in file:
-    #行ごとにリストにし、出力する。
-    line=lines.split(",")
-    print("|{:<40}|{:>10}|".format(line[0],line[1].replace("\n","")))
-    print("-"*53)
-file.close()
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_2/Q3.prt_data.py
 
 
 ## 問4：読み込み、ゲーム値段。
@@ -129,31 +106,7 @@ The cheapest is SILENT HILL 3
 ```
 
 code：
-```python=
-#ファイルアクセス
-file=open("game.txt")
-#ゲーム値段表
-gamedict={}
-file.readline() #一行目を読み込み。
-
-for lines in file:
-    #行ごとに読み込み、リストの要素をそれぞれの変数に格納。
-    line=lines.split(",")
-    gameName,price=line[0],int(line[1].replace("\n",""))
-    #変数をそれぞれ辞書のキーと値として辞書に追加・
-    gamedict[gameName]=price
-file.close()
-
-#一番高いのと一番安い
-expensive=max(gamedict.values())
-cheap=min(gamedict.values())
-#もし値が一番高い値段と一致していればキーを出力。反対に、安いときは安いゲームのキーを。
-for k,v in gamedict.items():
-    if v==expensive:
-        print("The most expensive is {}".format(k))
-    elif v==cheap:
-        print("The cheapest is {}".format(k))
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_2/Q4.price.py
 
 ## 問5：モンスター
 ファイル「monster.txt」の内容を読み込み、指定したモンスターの能力値を確認できるプログラムを作ってください。まず、入力例のように内容を表示し、次にモンスターを指定できるようにします。指定したら指定されたモンスターの能力値と能力の平均値を出力します。なお、平均値を出力の際に、小数点以下二桁で出力してください。
@@ -182,40 +135,4 @@ Name:Arsene , Atk: 150 , Def: 70 ,Ave: 110.00
 
 ```
 code：
-```python=
-def monTable(contents):
-    name,atk,defen=[],[],[]
-    for i in contents:
-        monData=i.split()
-        name.append(monData[0])
-        atk.append(monData[1])
-        defen.append(monData[2])
-    return name,atk,defen
-
-#アクセス
-file=open("monster.txt")
-file.readline()
-title=file.readline()
-contents = file.readlines()
-file.close()
-#タイトルを表示する。
-print(title[:-1])
-#モンスターを表示する。
-num=0
-for i in contents:
-    print("{}.{}".format(num+1,i[:-1]))
-    num+=1
-
-#指定する。
-index=int(input("どれが見たい？"))
-#文字列を処理して、数値を抽出する。
-name,atk,defen = monTable(contents)
-#指定したモンスターのデーターを変数に格納。
-sName=name[index-1]
-sAtk=int(atk[index-1])
-sDefen=int(defen[index-1])
-sAve=(sAtk+sDefen)/2
-#出力する。
-print("Name:{} , Atk: {} , Def: {} ,Ave: {:.2f}".format(sName,sAtk,sDefen,sAve))
-    
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_2/Q5.monster.py
