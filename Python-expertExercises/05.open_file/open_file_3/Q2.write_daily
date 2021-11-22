@@ -1,0 +1,8 @@
+file=open("read.txt","a")
+while True:
+    content=input("|")
+    if content=="end":
+        break
+    file.write(content+"\n")
+file.close()    
+print("---おわり---")
