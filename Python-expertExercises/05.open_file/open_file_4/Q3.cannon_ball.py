@@ -10,7 +10,7 @@ def readfile(fname):
 
 def getscore(contents):
     id_scoredict={}
-    #先取得有幾筆成績，並將它作為index使用
+    #成績データの長さを計り、indexとして使う
     for index in range(len(contents)):
         line=contents[index].split()
         scores=[int(i) for i in line[1:]] #ID以外的成績
@@ -20,18 +20,18 @@ def getscore(contents):
     return id_scoredict
 
 def getGamescore(contents,gameNum):
-    #做一個有每一次射擊成績的字典 Key:第幾比賽 value:那場比賽的成績。
+    #試合ごとの成績を持つ辞書を作成　Key:試合NO value:成績
     r_scoredict={}
     for i in range(gameNum):
         scorelist=[]
         for j in range(50):
-            line=contents[j].split()#一樣取得每一行
-            scores=line[1:] #ID以外取成績
+            line=contents[j].split()
+            scores=line[1:] #ID以外の成績
             scorelist.append(int(scores[i]))
             r_scoredict[i+1] = scorelist
     return r_scoredict
 
-#取得指定場的字典
+#指定した試合の成績を取得
 def getsinglescore(r_scoredict,rankNum):
     singledict={}
     for i in range(len(r_scoredict[rankNum])):
@@ -39,14 +39,14 @@ def getsinglescore(r_scoredict,rankNum):
         singledict[i+1]=score
     return singledict
         
-#將字典的值加總並回傳一個新字典的函數
+#試合成績の合計を計算し、辞書にする。
 def sumDict(scoredict):
     sumDict={}
     for key,value in scoredict.items():
         sumDict[key]=sum(value)
     return sumDict
 
-#將加總過後的字典的值做排序後比對，並依照值得大小順序回傳新的字典
+#加算した辞書の値をソートして、新たな辞書を返す。
 def getRank(sumdict):
     sumrank=sorted(sumdict.values(),reverse=True)
     rankdict={}
@@ -62,14 +62,14 @@ def getRank(sumdict):
 
 
 fname="cannon.txt"
-#讀檔
+#読込
 title,contents,gameNum=readfile(fname)
-#每個人成績及每回合成績的DICT
+#皆の成績と試合ごとの成績をもつ辞書の作成
 id_scoredict=getscore(contents)
 r_scoredict=getGamescore(contents,gameNum)
-#取得每一個人的總和
+#皆の成績の合計
 id_sum=sumDict(id_scoredict)
-#取得每一回合的總和
+#試合ごとの成績の合計
 r_sum=sumDict(r_scoredict)
 
 while True:
@@ -88,7 +88,7 @@ while True:
         item="ID"
     rankdict=getRank(target)
     
-    #列印排名
+    #ランクを出力
     print(title)
     print("-"*24)
     print("|{:<7}|{:^5}|{:>8}|".format("NO.",item,"Score"))
@@ -97,7 +97,7 @@ while True:
     through=1
     prev=0
     for k,v in rankdict.items():
-        if v==prev: #如果值和前一個一樣則排名一樣
+        if v==prev: #成績が同じだったら、ランクも一緒。
             print("|No.{:<4}|{:^5}|{:>8}|".format(count-1,k,v))
             print("-"*24)
             through+=1
