@@ -1,4 +1,4 @@
-# Python - open file(3) - Exercise(解答)
+# Python - open file(3) - Exercise
 
 ## 問1：会社ランキング
 以下は入社して良かったランキングののテキストファイルです。コードで以下のファイルを書き込んでください。
