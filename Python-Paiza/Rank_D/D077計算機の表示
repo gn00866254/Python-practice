@@ -1,0 +1,8 @@
+a,b = input().split()
+
+ans= int(a)*int(b)
+
+if ans <= 9999:
+    print(ans)
+else:
+    print("NG")

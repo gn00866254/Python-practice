@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-
+def check(allSugarList):
+    result=[]
+    for i in allSugarList:
+        if sum(i)%2==0:
+            result.append(True)
+        else:
+            result.append(False)
+            
+    if False in result:
+        return False
+    else:
+        return True
+
+def check2(allSugarList):
+    result=[]
+    for i in allSugarList:
+        if sum(i)%2==0:
+            wa=0
+            for j in i:
+                wa+=j
+                if wa==sum(i)//2:
+                    result.append(True)
+        if True not in result:
+            result.append(False)
+    if False in result:
+        return False
+    else:
+        return True
+
+
+h,w = map(int,input().split())
+allSugarList=[]
+
+
+for i in range(h):
+    result=[]
+    sugarList =list(map(int,input().split()))
+    allSugarList.append(sugarList)
+    
+if check(allSugarList) and check2(allSugarList):
+    print("Yes")
+    for i in allSugarList:
+        result=[]
+        wa=sum(i)//2
+        for j in range(w):    
+            if wa!=0:
+                wa-=i[j]
+                result.append("A")
+            else:
+                result.append("B")
+        print("".join(result))
+else:
+    print("No")
+    
+
