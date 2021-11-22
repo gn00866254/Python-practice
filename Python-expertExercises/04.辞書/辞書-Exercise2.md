@@ -46,13 +46,13 @@ print("-"*53)
 **ヒント2**：Pythonで暗号化する際に辞書を換字表として利用できます。要は、概念としては平文（暗号化される前の文）をキー（key）にし、暗号文を値にすることで、暗号化を可能にします。
 
 入力例1： 
-![](https://i.imgur.com/IUSXLM4.png)
+![](https://i.imgur.com/IUSXLM4.png) 
 出力例1： 
-![](https://i.imgur.com/0wqc2rr.png)
+![](https://i.imgur.com/0wqc2rr.png) 
 入力例2： 
-![](https://i.imgur.com/qAntJoS.png)
+![](https://i.imgur.com/qAntJoS.png) 
 出力例2： 
-![](https://i.imgur.com/MIM19Qc.png)
+![](https://i.imgur.com/MIM19Qc.png) 
 
 ```python=
 abcdict={}
@@ -85,13 +85,13 @@ for i in string:
 0:-----
 
 入力例１： 
-![](https://i.imgur.com/zqK2A8z.png)
+![](https://i.imgur.com/zqK2A8z.png) 
 出力例１： 
-![](https://i.imgur.com/WjAySvr.png)
+![](https://i.imgur.com/WjAySvr.png) 
 入力例２： 
-![](https://i.imgur.com/G8l3fSK.png)
+![](https://i.imgur.com/G8l3fSK.png) 
 出力例２： 
-![](https://i.imgur.com/b3j8s7Z.png)
+![](https://i.imgur.com/b3j8s7Z.png) 
 
 ```python=
 dic={1: ".----",
