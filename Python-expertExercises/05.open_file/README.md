@@ -86,5 +86,4 @@ print("=== After the replacement")
 data = data.replace(str_old, str_new)
 print(data)
 ```
-結果：
-![](https://i.imgur.com/8qI9DPu.png)
+
