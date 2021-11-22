@@ -37,17 +37,7 @@ read.txt
 ```
 
 code：
-```python=
-f = open("read.txt")
-string = f.read()
-sp_str = string.split()
-
-s= 0 #総和を格納する変数
-for i in sp_str:
-    s+=int(i)　#格納していく
-print(s)
-f.close()
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/Q2.num_sum
 
 ## 問3：文字列の削除
 文字列「s」を入力させ、ファイル「read.txt」の内容を表示する。その後ファイルの内容から、文字列「s」を含む文字を削除すること。
