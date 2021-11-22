@@ -45,14 +45,14 @@ print("-"*53)
 
 **ヒント2**：Pythonで暗号化する際に辞書を換字表として利用できます。要は、概念としては平文（暗号化される前の文）をキー（key）にし、暗号文を値にすることで、暗号化を可能にします。
 
-入力例1： 
-![](https://i.imgur.com/IUSXLM4.png) 
-出力例1： 
-![](https://i.imgur.com/0wqc2rr.png) 
-入力例2： 
-![](https://i.imgur.com/qAntJoS.png) 
-出力例2： 
-![](https://i.imgur.com/MIM19Qc.png) 
+入力例1：<br>
+![](https://i.imgur.com/IUSXLM4.png) <br>
+出力例1： <br>
+![](https://i.imgur.com/0wqc2rr.png) <br>
+入力例2： <br>
+![](https://i.imgur.com/qAntJoS.png) <br>
+出力例2： <br>
+![](https://i.imgur.com/MIM19Qc.png) <br>
 
 ```python=
 abcdict={}
