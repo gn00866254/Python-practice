@@ -1,0 +1,13 @@
+f = open("read.txt")
+string = f.read()
+sp_str = string.split()
+#削除前
+print("=== Before the deletion ===")
+print(sp_str)
+#削除したい
+s = input("Please enter the text you want to delete: ")
+sp_str.remove(s)
+#削除後
+print("=== After the deletion ===")
+print(sp_str)
+f.close()
