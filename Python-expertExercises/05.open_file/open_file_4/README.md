@@ -100,60 +100,7 @@ Which one?2
 ```
 code：
 #変数に入れる方法１
-```python=
-import random
-#読込
-filename="jackpot_language.txt"
-file=open(filename)
-langList=file.readline().strip().split(",")
-#['English', '日本語']言語の選択肢
-for i in range(len(langList)):
-    print("{}.{}".format(i+1,langList[i]),end=" ")
-choiceLang=int(input("Which one?"))
-
-#内容の改行文字を消して、区切り文字で分割してから選んだ言語に対応する内容をリストに格納。
-detail=[ i.strip().split(",")[choiceLang-1] for i in file]
-#内容をそれぞれの変数に格納。
-starText=detail[0]
-endText=detail[1]
-copletMessa=detail[2]
-countText=detail[3]
-gameStart=detail[4]
-playText=detail[5]
-overText=detail[6]
-jackpotText=detail[7]
-winText=detail[8]
-lostText=detail[9]
-file.close()
-
-start=int(input(starText))
-end=int(input(endText))
-jackpot = random.randint(start,end)
-print(copletMessa)
-
-count = int(input(countText))
-print("「-----"+gameStart+"-----」")
-for c in range(count):
-    print(playText.format(start,end))
-    guess=int(input(str(c+1)+"："))
-    if guess<start or guess>end:
-        print(overText.format(start,end))
-    elif guess == jackpot:
-        print(jackpotText.format(jackpot)+winText)
-        break
-    #もし入力した数字がjackpotより大きい場合、
-    #入力した数字を新たなendにする。
-    #反対に小さい場合は、startにする。
-    elif guess>jackpot:
-        end=guess
-    elif guess<jackpot:
-        start=guess
-    print("--------------------------")
-#全部試して当たらなかったらmessageを出力する。
-else:
-    print(lostText)
-    print(jackpotText.format(jackpot))
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_4/Q1.jackpot.py
 
 
 ## 問２：砲弾射撃記録の作成（ファイル書き込みの練習）
@@ -171,31 +118,7 @@ else:
 ![](https://i.imgur.com/wpnUHI4.png)  
 
 code：
-```python=
-import random
-def writefile(fname):
-    string=""
-    f=open(fname,"w")
-    #タイトルを書き込み
-    title="砲弾射撃記録"
-    f.write(title+"\n")
-    #一回目から百回目の文字列を用意
-    for i in range(100):
-        string+="{}回目\t".format(i+1)
-    f.write("ID\t"+string+"\n")
-    #データを作成する
-    for i in range(50):
-        content=""
-        for j in range(100):
-            r_num = random.randint(50,100)
-            content +=str(r_num)+"\t"
-        f.write("{}\t{}\n".format(i+1,content))
-    f.close()
-
-fname="cannon.txt"
-#寫檔
-writefile(fname)
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_4/Q2.write_cannon.py
 
 
 ## 問３：砲弾射撃記録の読み込み
@@ -203,117 +126,5 @@ writefile(fname)
 
 [砲弾射撃記録ファイル](https://drive.google.com/file/d/13JCxgUzZ-tIh8OeWjzZVBMQ9jmbkb00m/view?usp=sharing)
 
-已可取得1-100場所有人成績，每場比賽每個人的成績，指定場次的所有人成績，
-
-```python=
-# -*- coding: utf-8 -*-
-def readfile(fname):
-    file=open(fname)
-    #タイトルを取得
-    title=file.readline()
-    gameNum=len(file.readline().strip().split()[1:])
-    #IDをkeyとして、成績を値として格納
-    contents=file.readlines()
-    return title,contents,gameNum
-
-def getscore(contents):
-    id_scoredict={}
-    #先取得有幾筆成績，並將它作為index使用
-    for index in range(len(contents)):
-        line=contents[index].split()
-        scores=[int(i) for i in line[1:]] #ID以外的成績
-        humanid=line[0] #ID
-        #ID為KEY 成績為值
-        id_scoredict[humanid]=scores
-    return id_scoredict
-
-def getGamescore(contents,gameNum):
-    #做一個有每一次射擊成績的字典 Key:第幾比賽 value:那場比賽的成績。
-    r_scoredict={}
-    for i in range(gameNum):
-        scorelist=[]
-        for j in range(50):
-            line=contents[j].split()#一樣取得每一行
-            scores=line[1:] #ID以外取成績
-            scorelist.append(int(scores[i]))
-            r_scoredict[i+1] = scorelist
-    return r_scoredict
-
-#取得指定場的字典
-def getsinglescore(r_scoredict,rankNum):
-    singledict={}
-    for i in range(len(r_scoredict[rankNum])):
-        score = r_scoredict[rankNum][i]
-        singledict[i+1]=score
-    return singledict
-        
-#將字典的值加總並回傳一個新字典的函數
-def sumDict(scoredict):
-    sumDict={}
-    for key,value in scoredict.items():
-        sumDict[key]=sum(value)
-    return sumDict
-
-#將加總過後的字典的值做排序後比對，並依照值得大小順序回傳新的字典
-def getRank(sumdict):
-    sumrank=sorted(sumdict.values(),reverse=True)
-    rankdict={}
-    for sumNum in sumrank:
-        for k,v in sumdict.items():
-            if sumNum==v:
-                if k in rankdict:
-                    continue
-                else:
-                    rankdict[k]=v
-                    break
-    return rankdict
-
-
-fname="cannon.txt"
-#讀檔
-title,contents,gameNum=readfile(fname)
-#每個人成績及每回合成績的DICT
-id_scoredict=getscore(contents)
-r_scoredict=getGamescore(contents,gameNum)
-#取得每一個人的總和
-id_sum=sumDict(id_scoredict)
-#取得每一回合的總和
-r_sum=sumDict(r_scoredict)
-
-while True:
-    select_num = int(input("1.個人総合Rank　2.各試射総合Rank　3.各試射個人Rank:"))
-    target=0
-    item=""
-    if select_num == 1:
-        target=id_sum
-        item="ID"
-    elif select_num == 2:
-        target=r_sum
-        item="Game"
-    elif select_num == 3:
-        rankNum=int(input("何試合目のRank："))
-        target=getsinglescore(r_scoredict,rankNum)
-        item="ID"
-    rankdict=getRank(target)
-    
-    #列印排名
-    print(title)
-    print("-"*24)
-    print("|{:<7}|{:^5}|{:>8}|".format("NO.",item,"Score"))
-    print("-"*24)
-    count=1
-    through=1
-    prev=0
-    for k,v in rankdict.items():
-        if v==prev: #如果值和前一個一樣則排名一樣
-            print("|No.{:<4}|{:^5}|{:>8}|".format(count-1,k,v))
-            print("-"*24)
-            through+=1
-            continue
-        else:
-            print("|No.{:<4}|{:^5}|{:>8}|".format(count,k,v))
-            count+=through
-            through=1
-            prev=v
-            print("-"*24)
-```
+code:  
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/open_file_4/Q3.cannon_ball.py
