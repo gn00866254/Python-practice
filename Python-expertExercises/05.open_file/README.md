@@ -23,12 +23,7 @@ KONAMI
 ```
 
 code：
-```python=
-file_name = input("Please enter the file name:")
-file = open(file_name, 'r')
-print(file.read())
-file.close()
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/Q1.company_name.py
 
 ## 問2：ファイルデータの合計
 「read.txt」ファイルの内容（内容はスペースで区切られている数字）を読み込み、それらの合計を計算し出力するプログラムを作成せよ。読み込み終了したらファイルを閉じること。
