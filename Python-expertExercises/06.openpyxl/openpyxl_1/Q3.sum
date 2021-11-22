@@ -1,0 +1,13 @@
+import openpyxl
+
+#read sheet
+wb=openpyxl.load_workbook("Sales.xlsx",data_only=True)
+ws = wb.worksheets[0]
+
+a5 = ws["A5"]
+b5 = ws["B5"]
+
+a5.value = "総和："
+b5.value = "=SUM(B2:B4)"
+
+wb.save("Sales_sum.xlsx")
