@@ -75,15 +75,5 @@ watch shoes skirt senakers trunks pants
 ```
 
 code：
-```python=
-str_old = input("please enter s1:")
-str_new = input("please enter s2:")
-file = open("read.txt", "r")
-data = file.read()
-print("=== Before the replacement")
-print(data)
-print("=== After the replacement")
-data = data.replace(str_old, str_new)
-print(data)
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/Q4.replace
 
