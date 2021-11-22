@@ -56,21 +56,7 @@ Please enter the text you want to delete: Tomato
 ['Apple', 'Kiwi', 'Banana', 'Pear', 'Durian']
 ```
 code：
-```python=
-f = open("read.txt")
-string = f.read()
-sp_str = string.split()
-#削除前
-print("=== Before the deletion ===")
-print(sp_str)
-#削除したい
-s = input("Please enter the text you want to delete: ")
-sp_str.remove(s)
-#削除後
-print("=== After the deletion ===")
-print(sp_str)
-f.close()
-```
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/05.open_file/Q3.delete_string
 
 ## 問4：文字列の置換
 read.txtファイルを読み込み、ユーザに文字列s1と文字列s2を入力させ、ファイル内の文字列s1をs2に置き換え、元のファイルの内容と置換したファイルの内容を出力するプログラムを作成してください。
