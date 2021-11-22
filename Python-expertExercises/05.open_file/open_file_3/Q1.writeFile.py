@@ -1,0 +1,6 @@
+file=open("Company.txt","w")
+file.write("入社して良かった会社ランキング2019\n\n")
+file.write("一位 グーグル合同会社\n")
+file.write("二位 株式会社コスモスイニシア\n")
+file.write("三位 マッキンゼー＆カンパニー日本支社\n")
+file.close()
