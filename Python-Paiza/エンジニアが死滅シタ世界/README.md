@@ -1,5 +1,7 @@
 # PAIZA死滅した世界
 
+https://paiza.hatenablog.com/entry/2019/03/19/%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AD%E3%82%A4%E3%83%89%E3%81%A8%E5%86%92%E9%99%BA%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E8%A7%A3%E3%81%84%E3%81%9F%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3
+
 ## 隔離された街のゲート [MISSION LEVEL: B]
 ```python=
 def moveto(d,position):
