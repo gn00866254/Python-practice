@@ -1,39 +1,4 @@
-# Python 作業15 String - 3
-###### tags: `Python作業`
-
-問題例：
-
-円周、円面積を計算することが出来るプログラムを作る。
-入力するのは「半径」のみ、「π」は3.14で計算する。
-最低限以下の部分が表示される様にプログラムをする事。
-```
-入力：半径
-出力：円周
-出力：円面積
-```
-```
-入力例：
-Please input value r:1
-
-出力例：
-The round: 6.28
-The area: 3.14
-```
-コード例：
-```python=
-r = float(input("Please input value r:"))
-
-r_Round = r * 2 * 3.14
-
-r_Area = r * r * 3.14
-
-print("The round:", r_Round)
-
-print("The area:", r_Area)
-```
-
----
-
+# Python String - 3
 ## 問題１：
 
 テストデータの最大値と最小値の差を求めるプログラムを作成してください。
