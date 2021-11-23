@@ -101,33 +101,7 @@ for i in range(N):
     word_1=verysuperstrip(word_1,word_2)
 print(word_1)
 
-"""
-def verysuperstrip(word_1,word_2):
-    #この後文字列が重ねているかを判断するための変数を宣言する。
-    tmp=""
-    #本来の結果が変わらないように、新しい結果の変数を宣言する。
-    new_result=word_1
-    #そして、ループで重複しているかを判断する。
-    for i in word_2:
-        #ループが毎回実行されていくたびに、判断する文字列をどんどん追加していく。
-        tmp+=i
-        #自作のendmatch関数を使い、文字列の後ろはtmpなのかを判断する。
-        if new_result.endswith(tmp):
-            new_result=word_1[:-len(tmp)]
-    return new_result+word_2
 
-#結合する単語の個数Nを入力する。
-N=int(input())
-#結果の変数を宣言する。
-word_1=""
-#forのループを使い、N回入力する。
-for i in range(N):
-    #単語を入力する。
-    word_2=input()
-    #結果の変数と入力した単語を引数に入れる。
-    word_1=verysuperstrip(word_1,word_2)
-print(word_1)
-"""
 ```
 ## 砂漠の公園 [MISSION LEVEL: B]　大会の点数
 
