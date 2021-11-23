@@ -18,7 +18,7 @@
 
 ![](https://i.imgur.com/i6UAMFY.png)  
 code:  
-
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_3/Q1.max_min.py
 
 
 ## 問題２：
@@ -36,4 +36,4 @@ code:
 ---
 
 coede:  
-
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_3/Q2.SSN.py
