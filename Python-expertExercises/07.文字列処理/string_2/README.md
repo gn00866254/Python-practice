@@ -41,7 +41,7 @@ Namespaces are one honking great idea -- let's do more of those!"
 
 ---
 **code:**
-
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_2/Q1.code.py
 
 ## 問２：
 
@@ -51,3 +51,4 @@ Namespaces are one honking great idea -- let's do more of those!"
 
 ---
 **code:**
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_2/Q2.word_count.py
