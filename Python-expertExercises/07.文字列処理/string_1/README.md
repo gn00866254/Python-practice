@@ -11,8 +11,8 @@
 実行結果は実行結果は次の通りである：
 
 ![](https://i.imgur.com/GNpQ6Ol.png)
-:::info
 code：
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_1/Q1.string_judge.py
 
 ## 問題２：ユーザーに文字列を入力させ次のルールにそって文字列を処理し、機能ごとに関数にすること。
 
@@ -26,4 +26,4 @@ code：
 
 
 code：
-
+https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/07.%E6%96%87%E5%AD%97%E5%88%97%E5%87%A6%E7%90%86/string_1/Q2.string_sort.py
