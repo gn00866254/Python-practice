@@ -8,5 +8,4 @@
 * set
 * 辞書
 * open file
-* import
 * openpyxl
