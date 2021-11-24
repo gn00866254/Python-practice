@@ -9,4 +9,3 @@
 * open file
 * import
 * openpyxl
-* pygame
