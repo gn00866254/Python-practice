@@ -25,7 +25,7 @@ Please enter the suffix you want to judge: ion
 True
 ```
 code:  
-[Answer](https://github.com/gn00866254/Python-expertExercises/blob/main/01.Slice/01_suffix_judge.py)
+[Answer](https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/01.Slice/01_suffix_judge.py)
 
 ## 問題２：成績判定
 次の条件を満たすプログラムを作成してください。
