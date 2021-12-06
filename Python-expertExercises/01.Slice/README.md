@@ -52,5 +52,5 @@ stepが負数の場合
 >>> seq[high:low:-stride] # [seq[high], seq[high-stride], ..., seq[low+1]]
 ```
 code:  
-[Answer]()
+[Answer](https://github.com/gn00866254/Python-practice/blob/main/Python-expertExercises/01.Slice/02.score.py)
 
